@@ -1,0 +1,2 @@
+1. first check check command use "mysql --version"
+2.msql -u root -p (password of mysql)
