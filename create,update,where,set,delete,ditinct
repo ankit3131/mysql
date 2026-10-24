@@ -1,0 +1,81 @@
+--show table
+SHOW TABLES;
+
+-- SHOW DATABSE
+SHOW DATABASES
+
+-- CUURENT DATABSE
+SELECT DATABASE(); 
+
+-- DESRCIBE TABLE
+DESCRIBE employe
+
+-- SELECT ALL TABLE
+SELECT * FROM employe  
+ 
+-- SQL_SAFE_MODE
+SET SQL_SAFE_UPDATES = 0;
+ 
+create DATABASE sql_practises;
+CREATE TABLE employe (
+name varchar(25),
+department varchar(25),
+salary decimal(10 , 2),
+city varchar(25)
+)
+
+-- where are commend use
+SELECT * from employe
+WHERE department = "IT"
+
+SELECT * from employe
+where salary < 25000
+
+-- DISTINCT FIND UNIQUE VALUE
+ SELECT DISTINCT city
+ FROM employe
+ 
+ SELECT DISTINCT DEPARTMENT
+ FROM employe
+ 
+ -- sort by table row
+ SELECT * FROM employe
+ ORDER By salary asc;
+ 
+ -- desc by table row
+SELECT * from employe
+order BY salary desc;
+
+-- LIMIT table
+SELECT * from employe
+LIMIT 2
+
+SELECT * from employe
+ORDER by salary DESC
+LIMIT 3
+
+-- UPDATE data
+UPDATE employe
+SET salary = 40000
+WHERE name = 'ROHIT'
+
+select name
+from employe
+
+select * from employe
+WHERE name = 'ROHIT'
+
+describe employe
+
+-- delete from query
+DELETE FROM employe
+WHERE name = 'rohit'
+AND DEPARTMENT = 'UI DESIGNER'
+
+DELETE FROM employe
+WHERE name = 'ANKIT'
+AND DEPARTMENT = 'SOFTWARE ENGINER'
+
+DELETE FROM employe
+WHERE name = 'YASH PAL'
+AND DEPARTMENT = 'BACKEND DEVELOPER'
