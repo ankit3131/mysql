@@ -1,4 +1,4 @@
---show table
+-- show table
 SHOW TABLES;
 
 -- SHOW DATABSE
@@ -15,14 +15,27 @@ SELECT * FROM employe
  
 -- SQL_SAFE_MODE
 SET SQL_SAFE_UPDATES = 0;
- 
+
+-- create DATABAE 
 create DATABASE sql_practises;
+
+--USE databse
+
+USE anyDatabseName;
+
+-- create TABLE name
 CREATE TABLE employe (
 name varchar(25),
 department varchar(25),
 salary decimal(10 , 2),
 city varchar(25)
 )
+
+INSERT INTO employe (name, department, salary , city)
+VALUES
+    ('ANKIT', "IT", 2000 , 'Noida'),
+    ('YASPAL', "IT", 25000 , 'Noida'),
+    ('Priya', "UI", 40000 , 'Delhi');
 
 -- where are commend use
 SELECT * from employe
