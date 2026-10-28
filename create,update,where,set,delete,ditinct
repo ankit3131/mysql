@@ -37,12 +37,16 @@ VALUES
     ('YASPAL', "IT", 25000 , 'Noida'),
     ('Priya', "UI", 40000 , 'Delhi');
 
--- where are commend use
+-- where are command use
+
 SELECT * from employe
 WHERE department = "IT"
 
 SELECT * from employe
 where salary < 25000
+
+SELECT * FROM employe
+WHERE salary BETWEEN 30000 AND 100000
 
 -- DISTINCT FIND UNIQUE VALUE
  SELECT DISTINCT city
@@ -56,12 +60,12 @@ where salary < 25000
  ORDER By salary asc;
  
  -- desc by table row
-SELECT * from employe
+SELECT * from employe   
 order BY salary desc;
 
 -- LIMIT table
 SELECT * from employe
-LIMIT 2
+LIMIT 2 
 
 SELECT * from employe
 ORDER by salary DESC
@@ -92,3 +96,7 @@ AND DEPARTMENT = 'SOFTWARE ENGINER'
 DELETE FROM employe
 WHERE name = 'YASH PAL'
 AND DEPARTMENT = 'BACKEND DEVELOPER'
+
+--- alter table
+alter table employe
+DROP column id
