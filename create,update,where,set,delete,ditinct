@@ -4,7 +4,7 @@ SHOW TABLES;
 -- SHOW DATABSE
 SHOW DATABASES
 
--- CUURENT DATABSE
+-- CURENT DATABSE
 SELECT DATABASE(); 
 
 -- DESRCIBE TABLE
@@ -47,6 +47,13 @@ where salary < 25000
 
 SELECT * FROM employe
 WHERE salary BETWEEN 30000 AND 100000
+
+SELECT * from employe
+where department = "IT"
+AND city = "NOIDA"
+
+SELECT * from employe
+where not city = "delhi" 
 
 -- DISTINCT FIND UNIQUE VALUE
  SELECT DISTINCT city
