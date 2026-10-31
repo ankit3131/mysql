@@ -1,0 +1,192 @@
+-- create databse
+CREATE database test
+
+-- INSERT 
+CREATE TABLE employe (
+id INT PRIMARY KEY AUTO_INCREMENT,
+name varchar(20),
+department varchar(20),
+salary decimal(10 , 2),
+city varchar(20)
+)
+
+DESCRIBE employe
+USE test;
+
+INSERT INTO employe (id,name,salary,city) 
+VALUES 
+(1,'Ankit',30000,'Noida'),
+(2,'YasPal',40000,'Noida'),
+(3,'Sneha',50000,'Delhi')
+
+INSERT INTO employe (department)
+VALUES 
+("IT"),
+("IT"),
+("IT")
+
+DELETE FROM employe
+WHERE name = null
+AND department = 'IT'
+
+SELECT * from employe
+SET SQL_SAFE_UPDATES = 0;
+
+DELETE from employe
+WHERE id is NULl
+OR name is NULL
+
+SELECT * FROM employe
+
+SELECT * from employe
+WHERE department IS NULL
+
+UPDATE employe
+SET department = "NOT ASSAIGMRNT"
+WHERE department IS null;
+
+UPDATE employe
+SET department = "IT"
+WHERE id = 1;
+
+UPDATE employe
+SET department = "Senrior IT"
+WHERE id = 2;
+
+UPDATE employe
+SET department = "IT"
+WHERE id = 3;
+
+SELECT * FROM employe
+WHERE department = "IT"
+
+SELECT DISTINCT DEPARTMENT
+FROM employe
+
+SELECT * from employe
+
+SELECT * from employe
+WHERE department = "IT"
+
+SELECT * from employe
+WHERE salary < 22000
+
+Select DISTINCT city
+FROM employe
+
+SELECT * from employe
+Order by salary desc
+
+SELECT * from employe
+LIMIT 2
+
+SELECT * from employe
+ORDER By salary DESC
+LIMIT 2
+
+SET SQL_SAFE_UPDATES = 0;
+
+UPDATE employe
+set salary = "30000"
+WHERE name = "YASH PAL"
+
+DELETE from employe
+WHERE name = "ANKIT";
+
+SELECT * from employe
+
+SELECT * from employe
+WHERE department = "IT"
+ORDER BY salary desc
+
+SELECT * from employe
+WHERE city = "NOIDA"
+ORDER BY SALARY DESC
+LIMIT 1
+
+select * from employe
+
+INSERT INTO employe
+VALUES 
+("ANKIT KUMAR" , "JUNIOR" , 150000,"NOIDA"),
+("KUWAR" , "BACKEND" , 40000 , "GURUGRAM")
+
+DELETE from employe
+WHERE NAME = "ANKIT"
+AND department = "JUNIOR"
+
+SELECT * FROM employe
+WHERE salary BETWEEN 30000 AND 100000
+
+DELETE FROM employe
+WHERE name = "ankit"
+
+ALTER TABLE employe
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY;
+
+DELETE FROM employe
+WHERE ID = 3
+
+select * from employe
+
+ALTER TABLE employe
+DROP column id
+
+SELECT * FROM  employe
+WHERE city = "NOIDA"
+AND  department = "IT"
+
+SELECT * from employe
+where not city = "delhi" 
+
+SELECT * from employe
+WHERE salary >= 35000
+ORDER BY city asc , salary desc
+
+SELECT * from employe
+ORDER BY salary asc
+LIMIT 3
+
+SELECT DISTINCT salary
+FROM employe
+WHERE salary > 100000
+
+SELECT * FROM employe
+WHERE city = 'NOIDA'
+OR city = 'GURUGRAM'
+ORDER BY salary ASC
+
+SELECT * FROM employe
+WHERE name LIKE "A%"
+OR name LIKE "Y%"
+
+SELECT * from employe
+WHERE NOT department = "IT"
+AND salary > 10000
+
+UPDATE employe
+set salary = salary + (salary*10/100)
+WHERE department = "IT"
+
+ALTER table employe
+ADD COLUMN id INT NOT NULL AUTO_INCREMENT PRIMARY KEY
+
+UPDATE employe
+SET city = "DELHI"
+WHERE ID = 1
+
+SELECT * from employe
+WHERE ID = 1
+
+UPDATE employe
+set salary = salary + 5000
+WHERE salary < 37000
+AND city = "DELHI"
+
+DELETE from employe
+WHERE department = "JUNIOR"
+AND salary <= 150000
+
+DELETE from employe
+WHERE city = "GURUGRAM"
+AND salary <= 40000
