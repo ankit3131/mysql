@@ -1,0 +1,60 @@
+CREATE TABLE groupby (
+id int primary key auto_increment,
+name varchar(20),
+department varchar(20),
+salary decimal(10),
+city varchar(9)
+)
+alter table groupby
+ADD column id int primary key auto_increment
+
+describe  groupby
+
+select * from groupby
+
+INSERT INTO groupby (name, department , salary , city)
+VALUES
+("ankit kumar" , "IT" , 15000, "Noida"),
+("Yash Pal" , "Backend" , 40000 , "Delhi"),
+("Sneha soni" , "FULLBackend" , 50000 , "MP"),
+("Abhishek" , "Backend" , 60000 , "Delhi")
+
+-- count value
+select count(*) total_name
+FROM groupby
+
+-- sum of total
+select SUM(salary) total_salary
+from groupby
+
+-- avg of total
+select avg(salary) average_salary
+from groupby
+
+-- max of total
+select max(salary) as highest_Salary
+from groupby
+
+-- min of total
+select min(salary) as total_salary
+from groupby
+
+-- group by count
+select department , COUNT(*) as total_employe
+FROM groupby
+GROUP BY department
+
+-- group by avg
+select department , avg(salary) total_group
+FROM groupby
+GROUP BY department
+
+-- gropup by sum
+select department , sum(salary) total_group
+FROM groupby
+GROUP BY department
+
+-- group by MAX
+select department , max(salary) total_sum
+FROM groupby
+GROUP BY department
