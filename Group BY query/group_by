@@ -58,3 +58,10 @@ GROUP BY department
 select department , max(salary) total_sum
 FROM groupby
 GROUP BY department
+
+-- group by having
+select department , COUNT(*) AS total_count
+FROM groupby
+GROUP BY department
+HAVING COUNT(*) > 1
+
