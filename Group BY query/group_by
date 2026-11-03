@@ -65,3 +65,28 @@ FROM groupby
 GROUP BY department
 HAVING COUNT(*) > 1
 
+select * from groupby
+
+--
+SELECT department , avg(salary) as total_salary
+from groupby
+GROUP BY department
+HAVING AVG(salary) > 35000;
+
+-- highest toatal salary on department 
+SELECT department , sum(salary) as total_salary
+from groupby
+GROUP BY department
+ORDER BY total_salary desc
+limit 1
+
+-- count city
+SELECT city , count(*) as total_count
+from groupby
+GROUP BY city
+
+-- find high salary
+SELECT city , max(salary) as highest_salary
+from groupby
+GROUP BY city
+ORDER BY highest_salary DESC
