@@ -90,3 +90,12 @@ SELECT city , max(salary) as highest_salary
 from groupby
 GROUP BY city
 ORDER BY highest_salary DESC
+
+
+
+-- find more than salary
+SELECT department , count(*) AS total_number
+from  groupby
+where salary > 500
+AND department = "IT"
+GROUP BY department
