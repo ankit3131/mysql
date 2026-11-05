@@ -99,3 +99,24 @@ from  groupby
 where salary > 500
 AND department = "IT"
 GROUP BY department
+
+-- find deapartment num
+select department , count(*) as deparmnet_num
+from groupby
+GROUP BY department
+ORDER BY deparmnet_num desc
+
+-- avg salary
+select department , count(*) as deparmnet_num,
+AVG(salary) as avg_salary,
+MAX(salary) as high_salary
+from groupby
+GROUP BY department
+ORDER BY avg_salary DESC
+
+-- having mixeup use
+SELECT department , AVG(Salary) as avg_salary
+from groupby
+GROUP BY department
+HAVING AVG(salary) > 10000
+ORDER BY avg_salary desc
