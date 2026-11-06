@@ -40,6 +40,7 @@ select min(salary) as total_salary
 from groupby
 
 -- group by count
+
 select department , COUNT(*) as total_employe
 FROM groupby
 GROUP BY department
@@ -91,7 +92,14 @@ from groupby
 GROUP BY city
 ORDER BY highest_salary DESC
 
-
+-- find avg salary
+SELECT department , count(*) as total_employes,
+avg(salary) as avg_salary
+from groupby
+GROUP BY department
+HAVING COUNT(*) >= 2
+AND avg(salary) > 500
+ORDER BY avg_salary desc
 
 -- find more than salary
 SELECT department , count(*) AS total_number
@@ -100,13 +108,13 @@ where salary > 500
 AND department = "IT"
 GROUP BY department
 
--- find deapartment num
+select * from groupby
+
 select department , count(*) as deparmnet_num
 from groupby
 GROUP BY department
 ORDER BY deparmnet_num desc
 
--- avg salary
 select department , count(*) as deparmnet_num,
 AVG(salary) as avg_salary,
 MAX(salary) as high_salary
@@ -114,9 +122,39 @@ from groupby
 GROUP BY department
 ORDER BY avg_salary DESC
 
--- having mixeup use
+-- mixup question 
 SELECT department , AVG(Salary) as avg_salary
 from groupby
 GROUP BY department
-HAVING AVG(salary) > 10000
+HAVING AVG(salary) > 30000
 ORDER BY avg_salary desc
+
+SET SQL_SAFE_UPDATES = 0;
+-- having city total employe
+SELECT city , COUNT(*) as total_employes
+from groupby
+GROUP BY city
+
+-- inceraese salary
+UPDATE groupby
+SET salary = salary + (salary*10/100)
+where department = "Backend"
+AND salary <= 45000
+
+SELECT * from groupby
+WHERE department != "IT"
+ORDER BY salary DESC
+LIMIT 2
+
+-- all function use
+SELECT department , count(*) as total_name ,
+AVG(salary) as avg_salary,
+SUM(salary) as total_salary,
+MAX(salary) as max_salary,
+MIN(salary) as min_salary
+from groupby
+GROUP BY department
+ORDER BY total_name desc
+LIMIT 3
+
+select * from groupby
