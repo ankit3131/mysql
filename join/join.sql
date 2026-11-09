@@ -46,3 +46,25 @@ right join groupby d
 on e.id = d.id
 
 
+------------------ test all -----------------------------------------------
+
+select employe.name,
+groupby.name
+from groupby
+INNER JOIN employe
+on employe.name = groupby.name
+
+select * from groupby
+
+select employe.name , 
+groupby.name 
+from groupby
+left join employe
+on employe.name = groupby.name
+
+
+select employe.name ,
+groupby.name
+from employe
+right join groupby
+on employe.name = groupby.name
