@@ -68,3 +68,16 @@ groupby.name
 from employe
 right join groupby
 on employe.name = groupby.name
+
+
+select employe.name ,
+groupby.name
+from employe
+right join groupby
+on employe = groupby
+union
+select employe.name,
+groupby.name
+from groupby 
+left join employe 
+on groupby.name = employe.name
