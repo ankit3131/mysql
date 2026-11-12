@@ -1,0 +1,27 @@
+select *  from  groupby
+
+-- avergae salary
+SELECT name , salary
+from groupby
+WHERE salary > (
+SELECT avg(salary) 
+from groupby
+)
+
+-- highest salary
+SELECT name , salary
+from groupby
+WHERE salary >= (
+SELECT MAX(SALARY) as highest_salary
+from groupby
+)
+
+-- same department
+select name , department
+from groupby
+WHERE department = (
+select department 
+from groupby
+where name = "Yash Pal"
+)
+
