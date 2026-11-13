@@ -25,3 +25,22 @@ from groupby
 where name = "Yash Pal"
 )
 
+-- highest salary
+select department , salary
+from groupby
+WHERE salary = (
+select MAX(salary)
+from groupby
+)
+
+select * from groupby
+
+-- same department
+select name , department
+from groupby
+where department = (
+select department
+from groupby
+where name = "Yash Pal"
+)
+
