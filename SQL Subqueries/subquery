@@ -44,3 +44,11 @@ from groupby
 where name = "Yash Pal"
 )
 
+---IN use 
+select name , department
+from groupby
+where department IN (
+select department 
+from groupby
+where salary > 40000
+)
