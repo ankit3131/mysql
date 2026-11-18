@@ -52,3 +52,21 @@ select department
 from groupby
 where salary > 40000
 )
+
+-- NOT IN
+SELECT distinct  department
+FROM groupby
+WHERE department NOT IN (
+    SELECT department
+    FROM groupby
+    WHERE salary < 30000
+);
+
+-- avg salary
+select name , department , salary
+from groupby
+WHERE salary > (
+select AVG(salary) as avg_salary
+from groupby
+WHERE department = "Backend"
+)
