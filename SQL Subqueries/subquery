@@ -70,3 +70,23 @@ select AVG(salary) as avg_salary
 from groupby
 WHERE department = "Backend"
 )
+
+
+-- find second highest salary
+select MAX(salary) as highest_salary
+from groupby
+WHERE salary < (
+SELECT MAX(salary)
+from groupby
+)
+
+select * from groupby
+
+-- averge highest salary 
+select name , department , salary
+from groupby e
+where salary > (
+select avg(salary)
+from groupby
+where department = e.department 
+)

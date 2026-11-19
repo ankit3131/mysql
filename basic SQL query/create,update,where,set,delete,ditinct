@@ -14,7 +14,7 @@ DESCRIBE employe
 SELECT * FROM employe  
  
 -- SQL_SAFE_MODE
-SET SQL_SAFE_UPDATES = 0;
+SET SQL_SAFE_UPDATES = 0 
 
 -- create DATABAE 
 create DATABASE sql_practises;
