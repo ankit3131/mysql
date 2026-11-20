@@ -90,3 +90,10 @@ select avg(salary)
 from groupby
 where department = e.department 
 )
+
+-- find highest salary
+select department , SUM(salary) As total_salary
+from groupby
+GROUP BY department
+ORDER BY total_salary DESC
+limit 1
