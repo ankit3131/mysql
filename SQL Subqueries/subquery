@@ -97,3 +97,13 @@ from groupby
 GROUP BY department
 ORDER BY total_salary DESC
 limit 1
+
+
+-- more then any salary
+SELECT name, department, salary
+FROM groupby
+WHERE salary > ANY (
+    SELECT salary
+    FROM groupby
+    WHERE department = 'Backend'
+);
